@@ -1,10 +1,10 @@
 [package]
 authors = ["Holochain Foundation"]
-description = "A JavaScript Wasm binding of the Holochain serialization and hashing algorithm"
+description = "A Javascript WASM binding for Holochain zome call hashing"
 edition = "2021"
-keywords = ["holochain", "serialization"]
+keywords = ["holochain", "hashing"]
 license = "CAL-1.0"
-name = "holochain_serialization_js"
+name = "holochain-serialization"
 repository = "To be filled"
 version = "0.1.0"
 
@@ -17,8 +17,8 @@ default = ["console_error_panic_hook"]
 [dependencies]
 console_error_panic_hook = {version = "0.1.6", optional = true}
 getrandom = {version = "0.2", features = ["js"]}
-holo_hash = {path = "../holochain/crates/holo_hash", features = ["encoding"]}
-holochain_zome_types = {path = "../holochain/crates/holochain_zome_types", default-features = false}
+holo_hash = { git = "https://github.com/holochain/holochain", rev = "c6bb672d624a884c57ffe588607ffc06aa2f7c74", features = ["encoding"] }
+holochain_zome_types = { git = "https://github.com/holochain/holochain", rev = "c6bb672d624a884c57ffe588607ffc06aa2f7c74", default-features = false }
 serde = {version = "1.0", features = ["derive"]}
 serde-wasm-bindgen = "0.4"
 tokio = {version = "1", features = ["rt", "sync"]}
@@ -27,5 +27,5 @@ web-sys = {version = "0.3", features = ["console"]}
 
 [dev-dependencies]
 arbitrary = {version = "1.0", features = ["derive"]}
-holochain = {path = "../holochain/crates/holochain"}
+holochain = { git = "https://github.com/holochain/holochain", rev = "c6bb672d624a884c57ffe588607ffc06aa2f7c74" }
 wasm-bindgen-test = "0.3"
