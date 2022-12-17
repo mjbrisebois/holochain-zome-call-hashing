@@ -1,11 +1,11 @@
 [package]
-authors = ["Holochain Foundation"]
+authors = ["matthew.brisebois@holo.host"]
 description = "A Javascript WASM binding for Holochain zome call hashing"
 edition = "2021"
 keywords = ["holochain", "hashing"]
 license = "CAL-1.0"
-name = "holochain-serialization"
-repository = "To be filled"
+name = "holochain-zome-call-hashing"
+repository = "https://github.com/mjbrisebois/holochain-zome-call-hashing-js"
 version = "0.1.0"
 
 [lib]
@@ -16,16 +16,7 @@ default = ["console_error_panic_hook"]
 
 [dependencies]
 console_error_panic_hook = {version = "0.1.6", optional = true}
-getrandom = {version = "0.2", features = ["js"]}
 holo_hash = { git = "https://github.com/holochain/holochain", rev = "c6bb672d624a884c57ffe588607ffc06aa2f7c74", features = ["encoding"] }
 holochain_zome_types = { git = "https://github.com/holochain/holochain", rev = "c6bb672d624a884c57ffe588607ffc06aa2f7c74", default-features = false }
-serde = {version = "1.0", features = ["derive"]}
 serde-wasm-bindgen = "0.4"
-tokio = {version = "1", features = ["rt", "sync"]}
 wasm-bindgen = "0.2"
-web-sys = {version = "0.3", features = ["console"]}
-
-[dev-dependencies]
-arbitrary = {version = "1.0", features = ["derive"]}
-holochain = { git = "https://github.com/holochain/holochain", rev = "c6bb672d624a884c57ffe588607ffc06aa2f7c74" }
-wasm-bindgen-test = "0.3"

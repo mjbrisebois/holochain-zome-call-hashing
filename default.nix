@@ -55,5 +55,6 @@ in nixpkgs.mkShell {
   buildInputs = with nixpkgs; [
     wasm-bindgen-cli
     wasm-pack
+    jq
   ];
 }
